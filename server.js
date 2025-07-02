@@ -8,18 +8,16 @@ const PORT = 5000;
 // get __dirname equivalent in ES module
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+app.use(express.static(path.join(__dirname, "public")));
 
 // Serve the .well-known directory publicly
 app.use(
   "/.well-known",
   express.static(path.join(__dirname, "public/.well-known"))
 );
-
-// Health check route
 app.get("/", (req, res) => {
-  res.send("FestGo Backend Running 🚀");
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
-
 app.listen(PORT, () => {
   console.log(`✅ Server running at http://localhost:${PORT}`);
 });
