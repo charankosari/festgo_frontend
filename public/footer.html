@@ -1,0 +1,141 @@
+<!-- Footer Component -->
+<footer class="mt-20">
+    <!-- Newsletter Section -->
+    <div class="bg-gradient-to-r from-primary to-primary-dark py-6 relative overflow-hidden">
+        <!-- Background decorative elements -->
+        <div class="absolute inset-0">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+            <div class="absolute bottom-0 left-0 w-40 h-40 bg-white/5 rounded-full blur-3xl"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-lg mx-auto text-center">
+                <h3 class="text-white font-bold text-xl mb-2">Stay Updated</h3>
+                <p class="text-white/80 text-sm mb-6">Get the latest updates on events and offers</p>
+                <!-- Desktop Newsletter Form -->
+                <form class="hidden md:flex bg-white/20 backdrop-blur-sm rounded-full overflow-hidden border border-white/30 hover:bg-white/25 transition-all duration-300">
+                    <input 
+                        type="email" 
+                        placeholder="Your email address" 
+                        class="flex-1 px-6 py-3 text-white placeholder-white/70 bg-transparent focus:outline-none"
+                    />
+                    <button 
+                        type="submit" 
+                        class="bg-white text-primary px-6 py-3 font-semibold hover:bg-white/90 transition-all duration-300 flex items-center space-x-2 group"
+                    >
+                        <span>Subscribe</span>
+                        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                        </svg>
+                    </button>
+                </form>
+                <!-- Mobile Newsletter Form -->
+                <form class="md:hidden space-y-3">
+                    <input 
+                        type="email" 
+                        placeholder="Your email address" 
+                        class="w-full px-6 py-3 text-white placeholder-white/70 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 focus:outline-none focus:bg-white/25 transition-all duration-300"
+                    />
+                    <button 
+                        type="submit" 
+                        class="w-full bg-white text-primary px-6 py-3 font-semibold hover:bg-white/90 transition-all duration-300 flex items-center justify-center space-x-2 group rounded-full"
+                    >
+                        <span>Subscribe</span>
+                        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Footer Section -->
+    <div class="bg-gradient-to-br from-gray-900 via-gray-800 to-primary-dark text-white pt-16 pb-8 relative overflow-hidden">
+        <!-- Background decorative elements -->
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-10 left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-48 h-48 bg-secondary/10 rounded-full blur-3xl"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <!-- Logo and tagline -->
+            <div class="text-center mb-12" data-aos="fade-up" data-aos-duration="400">
+                <div class="inline-flex items-center justify-center w-20 h-20 bg-white rounded-lg mb-6 border border-white/20 hover:scale-110 transition-transform duration-300 shadow-elegant">
+                    <img src="/Images/logo.png" alt="FestGo Logo" class="w-12 h-12 rounded-lg">
+                </div>
+                <h3 class="text-2xl font-bold mb-2">FestGo</h3>
+                <p class="text-white/70 max-w-md mx-auto">Where every event begins with a click</p>
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mb-12">
+                <!-- Quick Links -->
+                <div data-aos="fade-up" data-aos-duration="400" data-aos-delay="50">
+                    <h4 class="font-semibold text-lg mb-4 text-white">Quick Links</h4>
+                    <div class="space-y-3">
+                        <a href="index.html#home" class="block text-white/70 hover:text-white hover:translate-x-2 transition-all duration-300">Home</a>
+                        <a href="index.html#contact" class="block text-white/70 hover:text-white hover:translate-x-2 transition-all duration-300">Contact</a>
+                        <a href="about-us.html" class="block text-white/70 hover:text-white hover:translate-x-2 transition-all duration-300">About Us</a>
+                    </div>
+                </div>
+
+                <!-- Legal -->
+                <div data-aos="fade-up" data-aos-duration="400" data-aos-delay="100">
+                    <h4 class="font-semibold text-lg mb-4 text-white">Legal</h4>
+                    <div class="space-y-3">
+                        <a href="user-agreement.html" class="block text-white/70 hover:text-white hover:translate-x-2 transition-all duration-300">User Agreement</a>
+                        <a href="terms-and-conditions.html" class="block text-white/70 hover:text-white hover:translate-x-2 transition-all duration-300">Terms & Conditions</a>
+                        <a href="privacy-policy.html" class="block text-white/70 hover:text-white hover:translate-x-2 transition-all duration-300">Privacy Policy</a>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div data-aos="fade-up" data-aos-duration="400" data-aos-delay="150" class="col-span-2 md:col-span-1">
+                    <h4 class="font-semibold text-lg mb-4 text-white">Get in Touch</h4>
+                    <div class="space-y-3">
+                        <p class="text-white/70">Ramapuram & Bapatla</p>
+                        <p class="text-white/70">Coastal Destinations</p>
+                        <div class="flex space-x-4 mt-6">
+                            <!-- Social Media Icons -->
+                            <a href="#" class="group w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20 hover:bg-white/20 hover:scale-110 transition-all duration-300">
+                                <svg class="w-5 h-5 text-white group-hover:text-primary-light transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 2.5h-2.5A4.5 4.5 0 0010 7v2H7v4h3v9h4v-9h3l1-4h-4V7a1 1 0 011-1h3V2.5z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="group w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20 hover:bg-white/20 hover:scale-110 transition-all duration-300">
+                                <svg class="w-5 h-5 text-white group-hover:text-primary-light transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <rect x="2" y="2" width="20" height="20" rx="5"/>
+                                    <circle cx="12" cy="12" r="5"/>
+                                    <circle cx="17.5" cy="6.5" r="1.5"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="group w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20 hover:bg-white/20 hover:scale-110 transition-all duration-300">
+                                <svg class="w-5 h-5 text-white group-hover:text-primary-light transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <rect x="2" y="6" width="20" height="12" rx="4"/>
+                                    <path d="M10 9.5v5l5-2.5-5-2.5z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="border-t border-white/10 pt-8 mt-8">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center justify-between text-center md:text-left space-y-2 md:space-y-0">
+                    <p class="text-white/60 text-sm">© 2025 FestGo Events Pvt Ltd. All rights reserved.</p>
+                    <p class="text-white/60 text-sm">
+                        Design & Developed by 
+                        <a href="https://omyratech.com" target="_blank" rel="noopener noreferrer" class="text-primary-light hover:text-white transition-colors duration-300 font-medium">
+                            Omyra Technologies Pvt Ltd.
+                        </a>
+                        <span class="text-red-400">❤️</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,53 @@
+{
+  "name": "festgo-landing-page",
+  "version": "1.0.0",
+  "description": "FestGo - Event Management Landing Page",
+  "main": "index.html",
+  "scripts": {
+    "dev": "live-server --port=3000 --open=/index.html",
+    "build": "npm run build:css && npm run minify:js",
+    "build:css": "sass styles.scss styles.css --style compressed",
+    "watch:css": "sass --watch styles.scss:styles.css",
+    "minify:js": "terser script.js -o script.min.js",
+    "serve": "http-server -p 8080 -o",
+    "lint:css": "stylelint styles.scss",
+    "lint:js": "eslint script.js",
+    "format": "prettier --write \"*.{html,css,js,scss}\"",
+    "optimize": "npm run build && npm run optimize:images",
+    "optimize:images": "imagemin Images/*.{jpg,jpeg,png,svg} --out-dir=Images/optimized"
+  },
+  "keywords": [
+    "festgo",
+    "event-management",
+    "landing-page",
+    "html",
+    "css",
+    "javascript",
+    "tailwind",
+    "sass"
+  ],
+  "author": "FestGo Team",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.70.0",
+    "live-server": "^1.2.2",
+    "http-server": "^14.1.1",
+    "terser": "^5.27.0",
+    "stylelint": "^16.2.1",
+    "eslint": "^8.56.0",
+    "prettier": "^3.2.5"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/festgo/landing-page.git"
+  },
+  "bugs": {
+    "url": "https://github.com/festgo/landing-page/issues"
+  },
+  "homepage": "https://festgo.com"
+}

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - FestGo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF6B35',
+                        secondary: '#2ECC71',
+                        accent: '#F39C12',
+                        'primary-dark': '#E55A2B',
+                        'primary-light': '#FF8A5C'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'poppins': ['Poppins', 'sans-serif']
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'bounce-slow': 'bounce 2s infinite',
+                        'pulse-slow': 'pulse 3s infinite',
+                        'fade-in': 'fadeIn 0.5s ease-in',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'scale-in': 'scaleIn 0.5s ease-out'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(30px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        scaleIn: {
+                            '0%': { transform: 'scale(0.8)', opacity: '0' },
+                            '100%': { transform: 'scale(1)', opacity: '1' }
+                        }
+                    },
+                    boxShadow: {
+                        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+                        'elegant': '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                        'elegant-lg': '0 20px 50px -10px rgba(0, 0, 0, 0.15), 0 10px 20px -5px rgba(0, 0, 0, 0.1)',
+                        'glow': '0 0 20px rgba(255, 107, 53, 0.3)',
+                        'glow-green': '0 0 20px rgba(46, 204, 113, 0.3)',
+                        'glow-blue': '0 0 20px rgba(59, 130, 246, 0.3)'
+                    },
+                    backdropBlur: {
+                        'xs': '2px'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        </style>
+    </head>
+<body class="font-poppins bg-gradient-to-br from-gray-50 via-white to-blue-50/30">
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-lg shadow-glass sticky top-0 z-50 border-b border-white/20">
+    <nav class="container mx-auto px-2 sm:px-4 py-3 sm:py-4 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-0">
+        <!-- Logo -->
+        <div class="flex items-center justify-center sm:justify-start w-full sm:w-auto" data-aos="fade-right" data-aos-duration="800">
+            <a href="index.html#home"><img src="/Images/logo.png" alt="FestGo Logo" class="w-auto h-10 sm:h-12 rounded-full shadow-elegant hover:shadow-glow transition-all duration-300 transform hover:scale-105"></a>
+        </div>
+        
+        <!-- Navigation Links - Always visible, responsive -->
+        <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-end w-full sm:w-auto gap-2 sm:gap-6 lg:gap-8" data-aos="fade-down" data-aos-duration="800" data-aos-delay="200">
+            <!-- Nav Links -->
+            <div class="flex flex-row items-center gap-4 sm:gap-6 lg:gap-8">
+                <a href="index.html#home" class="nav-link text-primary font-semibold relative group transition-all duration-300 text-sm sm:text-base" data-section="home">
+                    Home
+                    <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-primary-dark rounded-full"></span>
+                </a>
+                <a href="index.html#services" class="nav-link text-gray-700 hover:text-primary transition-all duration-300 font-medium relative group text-sm sm:text-base" data-section="services">
+                    Services
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-primary-dark rounded-full transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="index.html#contact" class="nav-link text-gray-700 hover:text-primary transition-all duration-300 font-medium relative group text-sm sm:text-base" data-section="contact">
+                    Contact
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-primary-dark rounded-full transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </div>
+            
+            <!-- Get App Button -->
+            <a href="#" class="bg-gradient-to-r from-primary to-primary-dark text-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-full hover:shadow-glow transition-all duration-300 text-xs sm:text-sm font-semibold transform hover:scale-105 hover:-translate-y-1 mt-2 sm:mt-0">
+                Get the App ↗
+            </a>
+        </div>
+    </nav>
+  </header>
+    <!-- Main Content -->
+    <main class="min-h-screen relative overflow-hidden">
+        <!-- Background decorative elements -->
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-xl animate-float"></div>
+            <div class="absolute top-40 right-20 w-24 h-24 bg-gradient-to-br from-secondary/20 to-primary/20 rounded-full blur-xl animate-float" style="animation-delay: -2s;"></div>
+            <div class="absolute bottom-40 left-1/4 w-20 h-20 bg-gradient-to-br from-accent/20 to-secondary/20 rounded-full blur-xl animate-float" style="animation-delay: -4s;"></div>
+        </div>
+
+        <section class="relative z-10 max-w-4xl mx-auto px-6 py-20">
+            <!-- Hero Section -->
+            <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="800">
+                <h1 class="text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-primary via-primary-dark to-accent bg-clip-text text-transparent mb-6">
+                    About Us
+                </h1>
+                <div class="w-32 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    Discover the story behind FestGo and how we're revolutionizing event planning and coastal getaways.
+                </p>
+            </div>
+
+            <!-- Content Cards -->
+            <div class="grid lg:grid-cols-2 gap-8 mb-16">
+                <!-- Mission Card -->
+                <div class="group bg-white/70 backdrop-blur-lg rounded-3xl p-8 shadow-glass border border-white/20 hover:shadow-elegant-lg transition-all duration-500 hover:transform hover:-translate-y-2" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-gradient-to-br from-primary to-primary-dark rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Our Mission</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        To create joyful experiences along the ocean breeze. We make every event hassle-free with verified resorts, curated entertainment, and a seamless app interface.
+                    </p>
+                </div>
+
+                <!-- Vision Card -->
+                <div class="group bg-white/70 backdrop-blur-lg rounded-3xl p-8 shadow-glass border border-white/20 hover:shadow-elegant-lg transition-all duration-500 hover:transform hover:-translate-y-2" data-aos="fade-left" data-aos-duration="800" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-gradient-to-br from-secondary to-accent rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Our Vision</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        To become the premier platform connecting people with unforgettable coastal experiences, making every celebration memorable and every getaway extraordinary.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="bg-white/80 backdrop-blur-lg rounded-3xl p-10 shadow-glass border border-white/20 mb-16" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                <div class="prose prose-lg max-w-none">
+                    <div class="text-gray-700 space-y-8 leading-relaxed">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
+                            <p class="text-lg">
+                                Welcome to <span class="font-semibold text-primary">FestGo</span>, your one-stop platform to book beach resorts, rooms, food, spa, and unique party events at coastal destinations like Ramapuram and Bapatla.
+                            </p>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-2 h-2 bg-secondary rounded-full mt-3 flex-shrink-0"></div>
+                            <p class="text-lg">
+                                Whether you're planning a birthday, engagement, family party, or a weekend getaway, FestGo makes it <span class="font-semibold text-secondary">easy, fun, and memorable</span>.
+                            </p>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-2 h-2 bg-accent rounded-full mt-3 flex-shrink-0"></div>
+                            <p class="text-lg">
+                                Our mission is to create joyful experiences along the ocean breeze. With verified resorts, curated entertainment, and a seamless app interface, we make every event hassle-free.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="grid md:grid-cols-3 gap-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
+                <div class="group text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-white/20 hover:shadow-elegant transition-all duration-300 hover:transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-gradient-to-br from-primary to-primary-dark rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-gray-800 mb-2">Verified Resorts</h4>
+                    <p class="text-sm text-gray-600">Quality-checked accommodations</p>
+                </div>
+                
+                <div class="group text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-white/20 hover:shadow-elegant transition-all duration-300 hover:transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-gradient-to-br from-secondary to-accent rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-9 4v10a2 2 0 002 2h6a2 2 0 002-2V8M7 8h10l-1 10H8L7 8z"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-gray-800 mb-2">Seamless Booking</h4>
+                    <p class="text-sm text-gray-600">Easy one-click reservations</p>
+                </div>
+                
+                <div class="group text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-white/20 hover:shadow-elegant transition-all duration-300 hover:transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-gradient-to-br from-accent to-primary rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-gray-800 mb-2">Memorable Events</h4>
+                    <p class="text-sm text-gray-600">Unforgettable experiences</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer Component Container -->
+    <footer class="mt-20">
+        <!-- Newsletter Section -->
+        <div class="bg-gradient-to-r from-primary to-primary-dark py-6 relative overflow-hidden">
+            <!-- Background decorative elements -->
+            <div class="absolute inset-0">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+                <div class="absolute bottom-0 left-0 w-40 h-40 bg-white/5 rounded-full blur-3xl"></div>
+            </div>
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="max-w-lg mx-auto text-center">
+                    <h3 class="text-white font-bold text-xl mb-2">Stay Updated</h3>
+                    <p class="text-white/80 text-sm mb-6">Get the latest updates on events and offers</p>
+                    <!-- Desktop Newsletter Form -->
+                    <form class="hidden md:flex bg-white/20 backdrop-blur-sm rounded-full overflow-hidden border border-white/30 hover:bg-white/25 transition-all duration-300">
+                        <input 
+                            type="email" 
+                            placeholder="Your email address" 
+                            class="flex-1 px-6 py-3 text-white placeholder-white/70 bg-transparent focus:outline-none"
+                        />
+                        <button 
+                            type="submit" 
+                            class="bg-white text-primary px-6 py-3 font-semibold hover:bg-white/90 transition-all duration-300 flex items-center space-x-2 group"
+                        >
+                            <span>Subscribe</span>
+                            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                            </svg>
+                        </button>
+                    </form>
+                    <!-- Mobile Newsletter Form -->
+                    <form class="md:hidden space-y-3">
+                        <input 
+                            type="email" 
+                            placeholder="Your email address" 
+                            class="w-full px-6 py-3 text-white placeholder-white/70 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 focus:outline-none focus:bg-white/25 transition-all duration-300"
+                        />
+                        <button 
+                            type="submit" 
+                            class="w-full bg-white text-primary px-6 py-3 font-semibold hover:bg-white/90 transition-all duration-300 flex items-center justify-center space-x-2 group rounded-full"
+                        >
+                            <span>Subscribe</span>
+                            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Footer Section -->
+        <div class="bg-gradient-to-br from-gray-900 via-gray-800 to-primary-dark text-white pt-16 pb-8 relative overflow-hidden">
+            <!-- Background decorative elements -->
+            <div class="absolute inset-0 pointer-events-none">
+                <div class="absolute top-10 left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-10 right-10 w-48 h-48 bg-secondary/10 rounded-full blur-3xl"></div>
+                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+            </div>
+            
+            <div class="container mx-auto px-6 relative z-10">
+                <!-- Logo and tagline -->
+                <div class="text-center mb-12" data-aos="fade-up" data-aos-duration="800">
+                    <div class="inline-flex items-center justify-center mb-6">
+                        <img src="/Images/logo.png" alt="FestGo Logo" class="w-auto h-16 bg-white rounded-lg shadow-elegant hover:shadow-glow transition-all duration-300 transform hover:scale-105 p-2">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">FestGo</h3>
+                    <p class="text-white/70 max-w-md mx-auto">Where every event begins with a click</p>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mb-12">
+                    <!-- Quick Links -->
+                    <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                        <h4 class="font-semibold text-lg mb-4 text-white">Quick Links</h4>
+                        <div class="space-y-3">
+                            <a href="index.html#home" class="block text-primary-light font-medium hover:text-white hover:translate-x-2 transition-all duration-300">Home</a>
+                            <a href="index.html#contact" class="block text-white/70 hover:text-white hover:translate-x-2 transition-all duration-300">Contact</a>
+                            <a href="about-us.html" class="block text-white/70 hover:text-white hover:translate-x-2 transition-all duration-300">About Us</a>
+                        </div>
+                    </div>
+
+                    <!-- Legal -->
+                    <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                        <h4 class="font-semibold text-lg mb-4 text-white">Legal</h4>
+                        <div class="space-y-3">
+                            <a href="user-agreement.html" class="block text-white/70 hover:text-white hover:translate-x-2 transition-all duration-300">User Agreement</a>
+                            <a href="terms-and-conditions.html" class="block text-white/70 hover:text-white hover:translate-x-2 transition-all duration-300">Terms & Conditions</a>
+                            <a href="privacy-policy.html" class="block text-white/70 hover:text-white hover:translate-x-2 transition-all duration-300">Privacy Policy</a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="300" class="col-span-2 md:col-span-1">
+                        <h4 class="font-semibold text-lg mb-4 text-white">Get in Touch</h4>
+                        <div class="space-y-3">
+                            <p class="text-white/70">Ramapuram & Bapatla</p>
+                            <p class="text-white/70">Coastal Destinations</p>
+                            <div class="flex space-x-4 mt-6">
+                                <!-- Social Media Icons -->
+                                <a href="#" class="group w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20 hover:bg-white/20 hover:scale-110 transition-all duration-300">
+                                    <svg class="w-5 h-5 text-white group-hover:text-primary-light transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 2.5h-2.5A4.5 4.5 0 0010 7v2H7v4h3v9h4v-9h3l1-4h-4V7a1 1 0 011-1h3V2.5z"/>
+                                    </svg>
+                                </a>
+                                <a href="#" class="group w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20 hover:bg-white/20 hover:scale-110 transition-all duration-300">
+                                    <svg class="w-5 h-5 text-white group-hover:text-primary-light transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <rect x="2" y="2" width="20" height="20" rx="5"/>
+                                        <circle cx="12" cy="12" r="5"/>
+                                        <circle cx="17.5" cy="6.5" r="1.5"/>
+                                    </svg>
+                                </a>
+                                <a href="#" class="group w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20 hover:bg-white/20 hover:scale-110 transition-all duration-300">
+                                    <svg class="w-5 h-5 text-white group-hover:text-primary-light transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <rect x="2" y="6" width="20" height="12" rx="4"/>
+                                        <path d="M10 9.5v5l5-2.5-5-2.5z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-white/10 pt-8 mt-8">
+                <div class="container mx-auto px-6">
+                    <div class="flex flex-col md:flex-row items-center justify-between text-center md:text-left space-y-2 md:space-y-0">
+                        <p class="text-white/60 text-sm">© 2025 FestGo Events Pvt Ltd. All rights reserved.</p>
+                        <p class="text-white/60 text-sm">
+                            Design & Developed by 
+                            <a href="https://omyratech.com" target="_blank" rel="noopener noreferrer" class="text-primary-light hover:text-white transition-colors duration-300 font-medium">
+                                Omyra Technologies Pvt Ltd.
+                            </a>
+                            <span class="text-red-400">❤️</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="components.js"></script>
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 400,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 50,
+            delay: 0
+        });
+
+        // Add ripple effect to clickable elements
+        function createRipple(event) {
+            const button = event.currentTarget;
+            const circle = document.createElement('span');
+            const diameter = Math.max(button.clientWidth, button.clientHeight);
+            const radius = diameter / 2;
+
+            circle.style.width = circle.style.height = `${diameter}px`;
+            circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
+            circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
+            circle.classList.add('ripple');
+
+            const ripple = button.getElementsByClassName('ripple')[0];
+            if (ripple) {
+                ripple.remove();
+            }
+
+            button.appendChild(circle);
+        }
+
+        // Add ripple styles
+        const style = document.createElement('style');
+        style.textContent = `
+            .ripple {
+                position: absolute;
+                border-radius: 50%;
+                transform: scale(0);
+                animation: ripple 600ms linear;
+                background-color: rgba(255, 255, 255, 0.6);
+                pointer-events: none;
+            }
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Apply ripple effect to buttons
+        document.querySelectorAll('button, a[class*="bg-gradient"]').forEach(button => {
+            button.addEventListener('click', createRipple);
+            button.style.position = 'relative';
+            button.style.overflow = 'hidden';
+        });
+
+        // Enhanced hover effects for cards
+        document.querySelectorAll('.group').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

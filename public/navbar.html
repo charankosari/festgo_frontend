@@ -1,0 +1,128 @@
+<!-- Navigation Bar Component -->
+<header class="bg-white/95 backdrop-blur-lg shadow-glass sticky top-0 z-50 border-b border-white/20" id="navbar">
+    <nav class="container mx-auto px-2 sm:px-4 py-3 sm:py-4 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-0">
+        <!-- Logo -->
+        <div class="flex items-center justify-center sm:justify-start w-full sm:w-auto" data-aos="fade-right" data-aos-duration="400">
+            <a href="index.html#home">
+                <img src="/Images/logo.png" alt="FestGo Logo" class="w-auto h-10 sm:h-12 rounded-full shadow-elegant hover:shadow-glow transition-all duration-300 transform hover:scale-105">
+            </a>
+        </div>
+        
+        <!-- Navigation Links - Always visible, responsive -->
+        <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-end w-full sm:w-auto gap-2 sm:gap-6 lg:gap-8" data-aos="fade-down" data-aos-duration="400" data-aos-delay="100">
+            <!-- Nav Links -->
+            <div class="flex flex-row items-center gap-4 sm:gap-6 lg:gap-8">
+                <a href="index.html#home" class="nav-link text-gray-700 hover:text-primary transition-all duration-300 font-medium relative group text-sm sm:text-base" data-page="home">
+                    Home
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-primary-dark rounded-full transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="index.html#services" class="nav-link text-gray-700 hover:text-primary transition-all duration-300 font-medium relative group text-sm sm:text-base" data-page="services">
+                    Services
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-primary-dark rounded-full transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="index.html#contact" class="nav-link text-gray-700 hover:text-primary transition-all duration-300 font-medium relative group text-sm sm:text-base" data-page="contact">
+                    Contact
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-primary-dark rounded-full transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="about-us.html" class="nav-link text-gray-700 hover:text-primary transition-all duration-300 font-medium relative group text-sm sm:text-base" data-page="about">
+                    About Us
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-primary-dark rounded-full transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </div>
+            
+            <!-- Get App Button -->
+            <a href="#" class="bg-gradient-to-r from-primary to-primary-dark text-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-full hover:shadow-glow transition-all duration-300 text-xs sm:text-sm font-semibold transform hover:scale-105 hover:-translate-y-1 mt-2 sm:mt-0">
+                Get the App ↗
+            </a>
+        </div>
+</header>
+
+<style>
+/* Enhanced Navbar Styles */
+#navbar {
+    transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+#navbar.scrolled {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Active page highlighting */
+.nav-link.active {
+    color: #FF6B35 !important;
+    font-weight: 600;
+}
+
+.nav-link.active span {
+    width: 100% !important;
+}
+</style>
+
+<script>
+// Navigation functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Active page highlighting
+    function setActivePage() {
+        const currentPath = window.location.pathname;
+        const currentHash = window.location.hash;
+        
+        // Remove active class from all links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.remove('active');
+        });
+
+        // Set active based on current page
+        if (currentPath.includes('about-us.html')) {
+            document.querySelectorAll('[data-page="about"]').forEach(link => {
+                link.classList.add('active');
+            });
+        } else if (currentPath.includes('privacy-policy.html')) {
+            document.querySelectorAll('[data-page="privacy"]').forEach(link => {
+                link.classList.add('active');
+            });
+        } else if (currentPath.includes('user-agreement.html')) {
+            document.querySelectorAll('[data-page="user-agreement"]').forEach(link => {
+                link.classList.add('active');
+            });
+        } else if (currentPath.includes('terms-and-conditions.html')) {
+            document.querySelectorAll('[data-page="terms"]').forEach(link => {
+                link.classList.add('active');
+            });
+        } else if (currentPath.includes('index.html') || currentPath === '/') {
+            if (currentHash === '#services') {
+                document.querySelectorAll('[data-page="services"]').forEach(link => {
+                    link.classList.add('active');
+                });
+            } else if (currentHash === '#contact') {
+                document.querySelectorAll('[data-page="contact"]').forEach(link => {
+                    link.classList.add('active');
+                });
+            } else {
+                document.querySelectorAll('[data-page="home"]').forEach(link => {
+                    link.classList.add('active');
+                });
+            }
+        }
+    }
+
+    // Set active page on load
+    setActivePage();
+
+    // Update active page on hash change
+    window.addEventListener('hashchange', setActivePage);
+});
+</script>

@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FestGo - Where every event begins with a click!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF6B35',
+                        secondary: '#2ECC71',
+                        accent: '#F39C12',
+                        'primary-dark': '#E55A2B',
+                        'primary-light': '#FF8A5C'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'poppins': ['Poppins', 'sans-serif']
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'bounce-slow': 'bounce 2s infinite',
+                        'pulse-slow': 'pulse 3s infinite',
+                        'fade-in': 'fadeIn 0.5s ease-in',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'scale-in': 'scaleIn 0.5s ease-out'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(30px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        scaleIn: {
+                            '0%': { transform: 'scale(0.8)', opacity: '0' },
+                            '100%': { transform: 'scale(1)', opacity: '1' }
+                        }
+                    },
+                    boxShadow: {
+                        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+                        'elegant': '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                        'elegant-lg': '0 20px 50px -10px rgba(0, 0, 0, 0.15), 0 10px 20px -5px rgba(0, 0, 0, 0.1)',
+                        'glow': '0 0 20px rgba(255, 107, 53, 0.3)',
+                        'glow-green': '0 0 20px rgba(46, 204, 113, 0.3)',
+                        'glow-blue': '0 0 20px rgba(59, 130, 246, 0.3)'
+                    },
+                    backdropBlur: {
+                        'xs': '2px'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-poppins bg-gradient-to-br from-gray-50 via-white to-blue-50/30">
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-lg shadow-glass sticky top-0 z-50 border-b border-white/20">
+    <nav class="container mx-auto px-2 sm:px-4 py-3 sm:py-4 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-0">
+        <!-- Logo -->
+        <div class="flex items-center justify-center sm:justify-start w-full sm:w-auto" data-aos="fade-right" data-aos-duration="800">
+            <a href="index.html#home"><img src="/Images/logo.png" alt="FestGo Logo" class="w-auto h-10 sm:h-12 rounded-full shadow-elegant hover:shadow-glow transition-all duration-300 transform hover:scale-105"></a>
+        </div>
+        
+        <!-- Navigation Links - Always visible, responsive -->
+        <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-end w-full sm:w-auto gap-2 sm:gap-6 lg:gap-8" data-aos="fade-down" data-aos-duration="800" data-aos-delay="200">
+            <!-- Nav Links -->
+            <div class="flex flex-row items-center gap-4 sm:gap-6 lg:gap-8">
+                <a href="index.html#home" class="nav-link text-primary font-semibold relative group transition-all duration-300 text-sm sm:text-base" data-section="home">
+                    Home
+                    <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-primary-dark rounded-full"></span>
+                </a>
+                <a href="index.html#services" class="nav-link text-gray-700 hover:text-primary transition-all duration-300 font-medium relative group text-sm sm:text-base" data-section="services">
+                    Services
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-primary-dark rounded-full transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="index.html#contact" class="nav-link text-gray-700 hover:text-primary transition-all duration-300 font-medium relative group text-sm sm:text-base" data-section="contact">
+                    Contact
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-primary-dark rounded-full transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </div>
+            
+            <!-- Get App Button -->
+            <a href="#" class="bg-gradient-to-r from-primary to-primary-dark text-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-full hover:shadow-glow transition-all duration-300 text-xs sm:text-sm font-semibold transform hover:scale-105 hover:-translate-y-1 mt-2 sm:mt-0">
+                Get the App ↗
+            </a>
+        </div>
+    </nav>
+  </header>
+
+    <!-- Hero Section -->
+<!-- Hero Section --><!-- Hero Section -->
+<section id="home" class="bg-[#FFF] py-16 lg:py-24 relative overflow-hidden">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 pointer-events-none -z-10">
+        <img src="/Images/pattern.svg" alt="Background Pattern" class="absolute top-0 right-0 w-[600px] opacity-10 hidden md:block">
+    </div>
+
+    <div class="container mx-auto px-6 sm:px-8 lg:px-16">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6 lg:space-y-8">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-[#FF6B35]">
+                    Where every <br /> event begins <br /> with a click!
+                </h1>
+                <p class="text-base sm:text-lg text-gray-700 max-w-lg">
+                    Book stays, fests, food, and more — all in one app designed for your perfect getaway or celebration.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button class="bg-[#008541] text-white px-8 py-3 rounded-full font-semibold hover:bg-green-600 transition-colors">
+                        Download App
+                    </button>
+                    <a href="#services" class="flex items-center gap-2 bg-white text-[#2C69EE] px-6 py-3 rounded-full font-semibold transition-colors hover:bg-[#2C69EE]/10">
+                        <svg class="w-5 h-5 text-[#2C69EE]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Explore Services
+                    </a>
+                </div>
+            </div>
+            
+            <div class="relative">
+                <img src="/Images/Hero.png" alt="FestGo Hero Image" class="w-full h-auto max-w-md mx-auto lg:max-w-none">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+   <section id="services" class="max-w-[1100px] w-full mx-auto rounded-[38px] relative overflow-visible flex flex-col items-center justify-start px-2 pt-6 pb-[8px] min-w-[320px]">
+  <!-- Decorative Circles: Only show on md+ screens -->
+  <div class="absolute inset-0 bg-[#F15A29] rounded-[40px] -z-20 mx-4 md:mx-8 lg:mx-12"></div>
+  <div class="absolute inset-0 overflow-hidden pointer-events-none -z-20 hidden md:block">
+    <div class="absolute top-1/2 left-4 md:left-8 lg:left-12 -translate-y-1/2 w-[200px] h-[400px] border-t-[50px] border-b-[50px] border-r-[50px] border-l-0 border-[#FF8962] rounded-r-full"></div>
+  </div>
+  <div class="absolute inset-0 overflow-hidden pointer-events-none -z-20 hidden md:block">
+    <div class="absolute bottom-0 right-4 md:right-8 lg:right-12 translate-y-1/2 w-[200px] h-[400px] border-t-[50px] border-b-[50px] border-l-[50px] border-r-0 border-[#FF8962] rounded-l-full"></div>
+  </div>
+
+  <!-- Heading -->
+  <h2 class="text-white text-center font-extrabold text-3xl sm:text-4xl mb-10 mt-2">Top Services Offered</h2>
+
+  <!-- Cards: Horizontal scroll on mobile, grid on md+ -->
+  <div class="flex md:hidden gap-4 px-4 box-border overflow-x-auto pb-4 w-full snap-x snap-mandatory scrollbar-hide" style="scrollbar-width: none; -ms-overflow-style: none;">
+    <!-- Card 1 -->
+    <div class="relative rounded-[24px] shadow-lg transition-transform w-[260px] max-w-[80vw] h-[340px] flex flex-col items-center justify-end p-0 overflow-hidden snap-center shrink-0 mx-0 box-border">
+      <img src="/Images/generated_card_1.png" alt="Hotel & Resort Bookings" class="absolute top-0 left-0 w-full h-full object-cover rounded-[24px] z-0">
+      <div class="relative z-10 w-full h-full flex flex-col justify-end bg-gradient-to-t from-black/30 via-black/10 to-transparent p-4">
+        <div class="text-center text-white font-bold text-lg mb-1">Hotel & Resort Bookings</div>
+        <p class="text-center text-white text-sm mb-2 px-2">Stay your way from luxury resorts to quick hourly stays.</p>
+        <div class="flex gap-2 flex-wrap justify-center">
+          <span class="bg-[#DFF6E1] text-[#008037] px-3 py-1 rounded-full text-xs font-medium">Verified Properties</span>
+          <span class="bg-[#DFF6E1] text-[#008037] px-3 py-1 rounded-full text-xs font-medium">Flexible Check-Ins</span>
+        </div>
+      </div>
+    </div>
+    <!-- Card 2 -->
+    <div class="relative rounded-[24px] shadow-lg transition-transform w-[260px] max-w-[80vw] h-[340px] flex flex-col items-center justify-end p-0 overflow-hidden snap-center shrink-0 mx-0 box-border">
+      <img src="/Images/generated_card_2.png" alt="Beach & City Fests" class="absolute top-0 left-0 w-full h-full object-cover rounded-[24px] z-0">
+      <div class="relative z-10 w-full h-full flex flex-col justify-end bg-gradient-to-t from-black/30 via-black/10 to-transparent p-4">
+        <div class="text-center text-white font-bold text-lg mb-1">Beach & City Fests</div>
+        <p class="text-center text-white text-sm mb-2 px-2">Snag your spot at the hottest events in town.</p>
+        <div class="flex gap-2 flex-wrap justify-center">
+          <span class="bg-[#DFF6E1] text-[#008037] px-3 py-1 rounded-full text-xs font-medium">Early Bird Deals</span>
+          <span class="bg-[#DFF6E1] text-[#008037] px-3 py-1 rounded-full text-xs font-medium">Mobile Tickets</span>
+        </div>
+      </div>
+    </div>
+    <!-- Card 3 -->
+    <div class="relative rounded-[24px] shadow-lg transition-transform w-[260px] max-w-[80vw] h-[340px] flex flex-col items-center justify-end p-0 overflow-hidden snap-center shrink-0 mx-0 box-border">
+      <img src="/Images/generated_card_3.png" alt="Event Organising" class="absolute top-0 left-0 w-full h-full object-cover rounded-[24px] z-0">
+      <div class="relative z-10 w-full h-full flex flex-col justify-end bg-gradient-to-t from-black/30 via-black/10 to-transparent p-4">
+        <div class="text-center text-white font-bold text-lg mb-1">Event Organising</div>
+        <p class="text-center text-white text-sm mb-2 px-2">Professional planners for weddings, birthdays, corporate events & more.</p>
+        <div class="flex gap-2 flex-wrap justify-center">
+          <span class="bg-[#DFF6E1] text-[#008037] px-3 py-1 rounded-full text-xs font-medium">Background-Checked</span>
+          <span class="bg-[#DFF6E1] text-[#008037] px-3 py-1 rounded-full text-xs font-medium">Transparent Pricing</span>
+        </div>
+      </div>
+    </div>
+    <!-- Card 4 -->
+    <div class="relative rounded-[24px] shadow-lg transition-transform w-[260px] max-w-[80vw] h-[340px] flex flex-col items-center justify-end p-0 overflow-hidden snap-center shrink-0 mx-0 box-border">
+      <img src="/Images/generated_card_4.png" alt="Group Travel Packages" class="absolute top-0 left-0 w-full h-full object-cover rounded-[24px] z-0">
+      <div class="relative z-10 w-full h-full flex flex-col justify-end bg-gradient-to-t from-black/30 via-black/10 to-transparent p-4">
+        <div class="text-center text-white font-bold text-lg mb-1">Group Travel Packages</div>
+        <p class="text-center text-white text-sm mb-2 px-2">Adventure made easy curated trips for friends, families, and corporates.</p>
+        <div class="flex gap-2 flex-wrap justify-center">
+          <span class="bg-[#DFF6E1] text-[#008037] px-3 py-1 rounded-full text-xs font-medium">Customizable</span>
+          <span class="bg-[#DFF6E1] text-[#008037] px-3 py-1 rounded-full text-xs font-medium">Guided Support</span>
+        </div>
+      </div>
+    </div>
+    <!-- Card 5 -->
+    <div class="relative rounded-[24px] shadow-lg transition-transform w-[260px] max-w-[80vw] h-[340px] flex flex-col items-center justify-end p-0 overflow-hidden snap-center shrink-0 mx-0 box-border">
+      <img src="/Images/generated_card_5.png" alt="Food Catering Services" class="absolute top-0 left-0 w-full h-full object-cover rounded-[24px] z-0">
+      <div class="relative z-10 w-full h-full flex flex-col justify-end bg-gradient-to-t from-black/30 via-black/10 to-transparent p-4">
+        <div class="text-center text-white font-bold text-lg mb-1">Food Catering Services</div>
+        <p class="text-center text-white text-sm mb-2 px-2">Tasty catering solutions for every kind of event.</p>
+        <div class="flex gap-2 flex-wrap justify-center">
+          <span class="bg-[#DFF6E1] text-[#008037] px-3 py-1 rounded-full text-xs font-medium">Trusted Vendors</span>
+          <span class="bg-[#DFF6E1] text-[#008037] px-3 py-1 rounded-full text-xs font-medium">On-Time Delivery</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Cards Grid for md+ screens -->
+  <div class="hidden md:grid grid-cols-3 gap-x-12 gap-y-7 min-w-[800px] max-w-[900px] mx-auto mt-8">
+    <!-- Top Row: Card 1 -->
+    <div class="relative rounded-[18px] shadow-lg hover:shadow-2xl transition-transform hover:-translate-y-2 w-[230px] h-[312px] flex flex-col items-center justify-end p-3 overflow-hidden">
+      <img src="/Images/generated_card_1.png" alt="Hotel & Resort Bookings" class="absolute top-0 left-0 w-full h-full object-cover rounded-[18px]  -z-10">
+      <div class="text-center text-gray-800 font-bold text-base mb-1">Hotel & Resort Bookings</div>
+      <p class="text-center text-gray-700 text-xs mb-2 px-2">Stay your way from luxury resorts to quick hourly stays.</p>
+      <div class="flex gap-2 flex-wrap justify-center">
+        <span class="bg-[#DFF6E1] text-[#008037] px-3 py-1 rounded-full text-xs font-medium">Verified Properties</span>
+        <span class="bg-[#DFF6E1] text-[#008037] px-3 py-1 rounded-full text-xs font-medium">Flexible Check-Ins</span>
+      </div>
+    </div>
+    <!-- Top Row: Card 2 -->
+    <div class="relative rounded-[18px] shadow-lg hover:shadow-2xl transition-transform hover:-translate-y-2 w-[230px] h-[312px] flex flex-col items-center justify-end p-3 overflow-hidden">
+      <img src="/Images/generated_card_2.png" alt="Beach & City Fests" class="absolute top-0 left-0 w-full h-full object-cover rounded-[18px]  -z-10">
+      <div class="text-center text-gray-800 font-bold text-base mb-1">Beach & City Fests</div>
+      <p class="text-center text-gray-700 text-xs mb-2 px-2">Snag your spot at the hottest events in town.</p>
+      <div class="flex gap-2 flex-wrap justify-center">
+        <span class="bg-[#DFF6E1] text-[#008037] px-3 py-1 rounded-full text-xs font-medium">Early Bird Deals</span>
+        <span class="bg-[#DFF6E1] text-[#008037] px-3 py-1 rounded-full text-xs font-medium">Mobile Tickets</span>
+      </div>
+    </div>
+    <!-- Top Row: Card 3 -->
+    <div class="relative rounded-[18px] shadow-lg hover:shadow-2xl transition-transform hover:-translate-y-2 w-[230px] h-[312px] flex flex-col items-center justify-end p-3 overflow-hidden">
+      <img src="/Images/generated_card_3.png" alt="Event Organising" class="absolute top-0 left-0 w-full h-full object-cover rounded-[18px] -z-10">
+      <div class="text-center text-gray-800 font-bold text-base mb-1">Event Organising</div>
+      <p class="text-center text-gray-700 text-xs mb-2 px-2">Professional planners for weddings, birthdays, corporate events & more.</p>
+      <div class="flex gap-2 flex-wrap justify-center">
+        <span class="bg-[#DFF6E1] text-[#008037] px-3 py-1 rounded-full text-xs font-medium">Background-Checked</span>
+        <span class="bg-[#DFF6E1] text-[#008037] px-3 py-1 rounded-full text-xs font-medium">Transparent Pricing</span>
+      </div>
+    </div>
+    <!-- Bottom Row: Centered Cards -->
+    <div class="col-span-3 flex justify-center gap-x-8 mt-2 translate-y-[20%] relative z-30">
+      <div class="relative rounded-[18px] shadow-lg hover:shadow-2xl transition-transform hover:-translate-y-2 w-[230px] h-[312px] flex flex-col items-center justify-end p-3 overflow-hidden">
+        <img src="/Images/generated_card_4.png" alt="Group Travel Packages" class="absolute top-0 left-0 w-full h-full object-cover rounded-[18px] z-0">
+        <div class="relative z-10 w-full h-full flex flex-col justify-end bg-gradient-to-t from-white/90 via-white/70 to-transparent p-3">
+          <div class="text-center text-gray-800 font-bold text-base mb-1">Group Travel Packages</div>
+          <p class="text-center text-gray-700 text-xs mb-2 px-2">Adventure made easy curated trips for friends, families, and corporates.</p>
+          <div class="flex gap-2 flex-wrap justify-center">
+            <span class="bg-[#DFF6E1] text-[#008037] px-3 py-1 rounded-full text-xs font-medium">Customizable</span>
+            <span class="bg-[#DFF6E1] text-[#008037] px-3 py-1 rounded-full text-xs font-medium">Guided Support</span>
+          </div>
+        </div>
+      </div>
+      <div class="relative rounded-[18px] shadow-lg hover:shadow-2xl transition-transform hover:-translate-y-2 w-[230px] h-[312px] flex flex-col items-center justify-end p-3 overflow-hidden">
+        <img src="/Images/generated_card_5.png" alt="Food Catering Services" class="absolute top-0 left-0 w-full h-full object-cover rounded-[18px] z-0">
+        <div class="relative z-10 w-full h-full flex flex-col justify-end bg-gradient-to-t from-white/90 via-white/70 to-transparent p-3">
+          <div class="text-center text-gray-800 font-bold text-base mb-1">Food Catering Services</div>
+          <p class="text-center text-gray-700 text-xs mb-2 px-2">Tasty catering solutions for every kind of event.</p>
+          <div class="flex gap-2 flex-wrap justify-center">
+            <span class="bg-[#DFF6E1] text-[#008037] px-3 py-1 rounded-full text-xs font-medium">Trusted Vendors</span>
+            <span class="bg-[#DFF6E1] text-[#008037] px-3 py-1 rounded-full text-xs font-medium">On-Time Delivery</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+    <!-- Why Choose FestGo Section -->
+    <section class="py-20 pt-60 bg-gradient-to-br from-orange-50/50 via-white to-blue-50/50 relative overflow-hidden -z-10">
+        <!-- Background decorative elements -->
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-3xl animate-pulse-slow"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-secondary/10 to-transparent rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 2s;"></div>
+            <div class="absolute top-1/2 left-1/3 w-48 h-48 bg-gradient-to-br from-accent/10 to-transparent rounded-full blur-2xl animate-float"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <div class="inline-flex items-center px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full border border-white/20 shadow-glass mb-6">
+                    <span class="w-2 h-2 bg-primary rounded-full mr-2 animate-pulse"></span>
+                    <span class="text-primary font-medium text-sm">Why Choose Us</span>
+                </div>
+                <h2 class="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary via-primary-dark to-red-600 bg-clip-text text-transparent mb-6">
+                    Why Choose FestGo?
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
+                    Experience the difference with our premium features designed to make your events unforgettable
+                </p>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-primary-dark rounded-full mx-auto mt-6"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Feature 1: Verified Professionals -->
+                <div class="group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative bg-white/70 backdrop-blur-lg rounded-3xl p-8 shadow-glass border border-white/20 transition-all duration-500 hover:shadow-elegant-lg hover:-translate-y-4 hover:bg-white/80">
+                        <!-- Gradient background on hover -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-secondary/5 to-green-600/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        
+                        <div class="relative z-10">
+                            <!-- Icon with animated background -->
+                            <div class="w-20 h-20 bg-gradient-to-br from-secondary to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-glow-green transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 group-hover:shadow-elegant">
+                                <svg class="w-10 h-10 text-white transition-transform duration-300 group-hover:scale-110" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-gray-800 mb-4 group-hover:text-secondary transition-colors duration-300">Verified Professionals</h3>
+                            <p class="text-gray-600 leading-relaxed text-center group-hover:text-gray-700 transition-colors duration-300">Only verified service providers with quality assurance and government approval.</p>
+                            
+                            <!-- Decorative elements -->
+                            <div class="absolute top-4 right-4 w-12 h-12 bg-gradient-to-br from-secondary/20 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:scale-150"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 2: Seamless Booking -->
+                <div class="group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative bg-white/70 backdrop-blur-lg rounded-3xl p-8 shadow-glass border border-white/20 transition-all duration-500 hover:shadow-elegant-lg hover:-translate-y-4 hover:bg-white/80">
+                        <!-- Gradient background on hover -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-blue-600/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        
+                        <div class="relative z-10">
+                            <!-- Icon with animated background -->
+                            <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-glow-blue transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 group-hover:shadow-elegant">
+                                <svg class="w-10 h-10 text-white transition-transform duration-300 group-hover:scale-110" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
+                                </svg>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-gray-800 mb-4 group-hover:text-blue-600 transition-colors duration-300">Seamless Booking</h3>
+                            <p class="text-gray-600 leading-relaxed text-center group-hover:text-gray-700 transition-colors duration-300">Easy booking, track status, instant booking confirmation, and payment processing.</p>
+                            
+                            <!-- Decorative elements -->
+                            <div class="absolute top-4 right-4 w-12 h-12 bg-gradient-to-br from-blue-500/20 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:scale-150"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 3: All-in-One App -->
+                <div class="group" data-aos="fade-up" data-aos-delay="600">
+                    <div class="relative bg-white/70 backdrop-blur-lg rounded-3xl p-8 shadow-glass border border-white/20 transition-all duration-500 hover:shadow-elegant-lg hover:-translate-y-4 hover:bg-white/80">
+                        <!-- Gradient background on hover -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-accent/5 to-orange-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        
+                        <div class="relative z-10">
+                            <!-- Icon with animated background -->
+                            <div class="w-20 h-20 bg-gradient-to-br from-accent to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-glow transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 group-hover:shadow-elegant">
+                                <svg class="w-10 h-10 text-white transition-transform duration-300 group-hover:scale-110" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-gray-800 mb-4 group-hover:text-accent transition-colors duration-300">All-in-One App</h3>
+                            <p class="text-gray-600 leading-relaxed text-center group-hover:text-gray-700 transition-colors duration-300">Complete solution for every event and celebration need in one comprehensive app.</p>
+                            
+                            <!-- Decorative elements -->
+                            <div class="absolute top-4 right-4 w-12 h-12 bg-gradient-to-br from-accent/20 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:scale-150"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Stats Section -->
+            <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8" data-aos="fade-up" data-aos-delay="800">
+                <div class="text-center group">
+                    <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-glass hover:shadow-elegant transition-all duration-300 hover:scale-105">
+                        <div class="text-3xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform duration-300">10K+</div>
+                        <div class="text-gray-600 text-sm font-medium">Happy Customers</div>
+                    </div>
+                </div>
+                <div class="text-center group">
+                    <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-glass hover:shadow-elegant transition-all duration-300 hover:scale-105">
+                        <div class="text-3xl font-bold text-secondary mb-2 group-hover:scale-110 transition-transform duration-300">500+</div>
+                        <div class="text-gray-600 text-sm font-medium">Events Managed</div>
+                    </div>
+                </div>
+                <div class="text-center group">
+                    <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-glass hover:shadow-elegant transition-all duration-300 hover:scale-105">
+                        <div class="text-3xl font-bold text-accent mb-2 group-hover:scale-110 transition-transform duration-300">98%</div>
+                        <div class="text-gray-600 text-sm font-medium">Satisfaction Rate</div>
+                    </div>
+                </div>
+                <div class="text-center group">
+                    <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-glass hover:shadow-elegant transition-all duration-300 hover:scale-105">
+                        <div class="text-3xl font-bold text-blue-600 mb-2 group-hover:scale-110 transition-transform duration-300">24/7</div>
+                        <div class="text-gray-600 text-sm font-medium">Support Available</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <!-- Contact Section (Orange box with white border and full rounded corners) -->
+    <section id="contact" class="py-10 bg-gray-50">
+  <div class="container mx-auto px-2">
+    <div class="grid lg:grid-cols-2 gap-0 max-w-5xl mx-auto rounded-2xl overflow-hidden shadow border border-gray-200 bg-white">
+      <!-- Contact Info Left -->
+      <div class="relative flex flex-col justify-between min-h-[420px] p-2 bg-transparent">
+        <div class="bg-[#F15A29] w-full h-full rounded-2xl p-8 overflow-hidden relative">
+          <h2 class="text-2xl font-bold text-white mb-2">Contact Us</h2>
+          <p class="text-white text-base mb-8 opacity-90">Whether you are a business owner or a customer<br>get in touch with us to know more about our services</p>
+          <div class="space-y-6 text-base">
+            <div class="flex items-center gap-3">
+              <!-- Phone Icon (modern) -->
+              <span class="inline-flex items-center justify-center w-6 h-6 bg-white bg-opacity-20 rounded-full">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5.5A2.5 2.5 0 015.5 3h2A2.5 2.5 0 0110 5.5v2A2.5 2.5 0 017.5 10h-2A2.5 2.5 0 013 7.5v-2zM14 3h2A2.5 2.5 0 0118.5 5.5v2A2.5 2.5 0 0116 10h-2A2.5 2.5 0 0111.5 7.5v-2A2.5 2.5 0 0114 3zM3 16.5A2.5 2.5 0 015.5 14h2A2.5 2.5 0 0110 16.5v2A2.5 2.5 0 017.5 21h-2A2.5 2.5 0 013 18.5v-2zM14 14h2a2.5 2.5 0 012.5 2.5v2A2.5 2.5 0 0116 21h-2a2.5 2.5 0 01-2.5-2.5v-2A2.5 2.5 0 0114 14z"/></svg>
+              </span>
+              <span class="text-white opacity-70">+91-97012 05498</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <!-- Email Icon (modern) -->
+              <span class="inline-flex items-center justify-center w-6 h-6 bg-white bg-opacity-20 rounded-full">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              </span>
+              <span class="text-white">festgoindia@gmail.com</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <!-- Location Icon (modern) -->
+              <span class="inline-flex items-center justify-center w-6 h-6 bg-white bg-opacity-20 rounded-full">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21c-4.418 0-8-4.03-8-9a8 8 0 1116 0c0 4.97-3.582 9-8 9zm0-11a2 2 0 100 4 2 2 0 000-4z"/></svg>
+              </span>
+              <span class="text-white">Ramya Apartments, Main Road,<br> Lakshmipuram, Chandramoulinagar - 522007</span>
+            </div>
+          </div>
+          <!-- Decorative Circles (contained and responsive) -->
+          <div class="pointer-events-none select-none">
+            <div class="absolute right-[-40px] bottom-[-30px] w-[210px] h-[210px] bg-[#D63400] rounded-full z-10 hidden md:block"></div>
+            <div class="absolute right-[60px] bottom-[80px] w-[130px] h-[130px] bg-white opacity-20 rounded-full z-20 hidden md:block"></div>
+            <!-- Mobile version with smaller, better positioned circles -->
+            <div class="absolute right-[-20px] bottom-[-20px] w-[120px] h-[120px] bg-[#D63400] rounded-full z-10 md:hidden"></div>
+            <div class="absolute right-[40px] bottom-[60px] w-[80px] h-[80px] bg-white opacity-20 rounded-full z-20 md:hidden"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Contact Form Right -->
+      <div class="bg-white p-8 flex flex-col justify-center">
+        <form class="space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-gray-700 font-medium mb-2">First Name</label>
+              <input type="text" class="w-full border-b border-gray-300 focus:border-primary outline-none py-2 bg-transparent" placeholder="">
+            </div>
+            <div>
+              <label class="block text-gray-700 font-medium mb-2">Last Name</label>
+              <input type="text" class="w-full border-b border-gray-300 focus:border-primary outline-none py-2 bg-transparent" placeholder="">
+            </div>
+            <div>
+              <label class="block text-gray-700 font-medium mb-2">Email</label>
+              <input type="email" class="w-full border-b border-gray-300 focus:border-primary outline-none py-2 bg-transparent" placeholder="">
+            </div>
+            <div>
+              <label class="block text-gray-700 font-medium mb-2">Phone Number</label>
+              <input type="tel" class="w-full border-b border-gray-300 focus:border-primary outline-none py-2 bg-transparent" placeholder="">
+            </div>
+          </div>
+          <div>
+            <label class="block text-gray-700 font-medium mb-2">Subject</label>
+            <input type="text" class="w-full border-b border-gray-300 focus:border-primary outline-none py-2 bg-transparent" placeholder="">
+          </div>
+          <div>
+            <label class="block text-gray-700 font-medium mb-2">Message</label>
+            <textarea rows="3" class="w-full border-b border-gray-300 focus:border-primary outline-none py-2 bg-transparent" placeholder="Write your message.."></textarea>
+          </div>
+          <div class="flex justify-end">
+            <button type="submit" class="bg-[#179A4A] text-white px-8 py-3 rounded-xl shadow hover:bg-green-700 transition-colors font-semibold text-base">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Mobile App Section (Your Pocket Planner) -->
+    <section class="py-20 bg-gradient-to-br from-blue-50/50 via-white to-green-50/50 relative overflow-hidden">
+        <!-- Background decorative elements -->
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-20 left-10 w-64 h-64 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-3xl animate-pulse-slow"></div>
+            <div class="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-br from-secondary/10 to-transparent rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 2s;"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-blue-500/5 to-green-500/5 rounded-full blur-3xl animate-float"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 flex flex-col items-center justify-center relative z-10">
+            <div class="flex flex-col lg:flex-row items-center justify-center gap-12 max-w-6xl mx-auto w-full">
+                <!-- Left: Title, Features and Store Badges -->
+                <div class="flex-1 flex flex-col items-center lg:items-start justify-center space-y-8" data-aos="fade-right" data-aos-duration="1000">
+                    <!-- Badge -->
+                    <div class="inline-flex items-center px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full border border-white/20 shadow-glass mb-2">
+                        <span class="w-2 h-2 bg-primary rounded-full mr-2 animate-pulse"></span>
+                        <span class="text-primary font-medium text-sm">Download Now & Get Started</span>
+                    </div>
+                    
+                    <!-- Title -->
+                    <h2 class="text-4xl lg:text-5xl font-extrabold bg-gradient-to-r from-primary via-secondary to-blue-600 bg-clip-text text-transparent text-center lg:text-left leading-tight">
+                        Your Pocket Planner
+                    </h2>
+                    
+                    <!-- Subtitle -->
+                    <p class="text-gray-600 text-lg leading-relaxed text-center lg:text-left max-w-md">
+                        Transform your event planning experience with our intuitive mobile app that puts the power of professional event management in your hands.
+                    </p>
+
+                    <!-- App features with glass cards -->
+                    <div class="space-y-4 w-full max-w-md">
+                        <div class="flex items-center gap-4 p-4 bg-white/60 backdrop-blur-sm rounded-2xl border border-white/20 shadow-glass hover:shadow-elegant hover:bg-white/70 transition-all duration-300 group">
+                            <div class="w-10 h-10 bg-gradient-to-br from-secondary to-green-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <span class="font-semibold text-gray-800 group-hover:text-secondary transition-colors duration-300">Real-time booking confirmations</span>
+                        </div>
+                        
+                        <div class="flex items-center gap-4 p-4 bg-white/60 backdrop-blur-sm rounded-2xl border border-white/20 shadow-glass hover:shadow-elegant hover:bg-white/70 transition-all duration-300 group">
+                            <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <span class="font-semibold text-gray-800 group-hover:text-blue-600 transition-colors duration-300">Secure payment gateway</span>
+                        </div>
+                        
+                        <div class="flex items-center gap-4 p-4 bg-white/60 backdrop-blur-sm rounded-2xl border border-white/20 shadow-glass hover:shadow-elegant hover:bg-white/70 transition-all duration-300 group">
+                            <div class="w-10 h-10 bg-gradient-to-br from-accent to-orange-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                                </svg>
+                            </div>
+                            <span class="font-semibold text-gray-800 group-hover:text-accent transition-colors duration-300">24/7 customer support</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Store Badges with enhanced styling -->
+                    <div class="flex flex-row gap-4 items-center justify-center lg:justify-start w-full max-w-sm">
+                        <a href="#" class="group transition-transform duration-300 hover:scale-105">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" class="h-[50px] w-auto">
+                        </a>
+                        <a href="#" class="group transition-transform duration-300 hover:scale-105">
+                            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="h-[50px] w-auto">
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Right: Phone with enhanced styling -->
+                <div class="flex-1 flex items-center justify-center relative min-h-[500px] mt-12 lg:mt-0" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+                    <!-- Glass morphism background circle -->
+                    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-white/20 backdrop-blur-lg rounded-full border border-white/30 shadow-glass animate-float"></div>
+                    
+                    <!-- Animated rings -->
+                    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] rounded-full border-2 border-gradient-to-r from-secondary to-green-600 opacity-60 animate-pulse-slow"></div>
+                    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[380px] h-[380px] rounded-full border border-primary/30 animate-pulse-slow" style="animation-delay: 1s;"></div>
+                    
+                    <!-- Phone image with enhanced styling -->
+                    <div class="relative z-10">
+                        <img src="/Images/phone.png" alt="FestGo App Mockup" class="relative w-[990px] h-auto animate-float drop-shadow-2xl" style="filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.15));">
+                    </div>
+                    
+                    <!-- Floating notification cards -->
+                    <div class="absolute top-16 right-8 bg-white/80 backdrop-blur-sm rounded-2xl p-4 shadow-glass border border-white/20 opacity-0 animate-scale-in group" style="animation-delay: 2s; animation-fill-mode: forwards;">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 bg-gradient-to-br from-secondary to-green-600 rounded-lg flex items-center justify-center">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="text-xs font-semibold text-gray-800">Booking Confirmed</div>
+                                <div class="text-xs text-gray-600">ID: #FG12345</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="absolute bottom-16 left-8 bg-white/80 backdrop-blur-sm rounded-2xl p-4 shadow-glass border border-white/20 opacity-0 animate-scale-in" style="animation-delay: 3s; animation-fill-mode: forwards;">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="text-xs font-semibold text-gray-800">Payment Secure</div>
+                                <div class="text-xs text-gray-600">SSL Protected</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating feature badges -->
+                    <div class="absolute top-1/4 left-4 w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 backdrop-blur-sm rounded-2xl border border-white/20 flex items-center justify-center animate-bounce-slow opacity-80">
+                        <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="absolute bottom-1/4 right-4 w-16 h-16 bg-gradient-to-br from-accent/20 to-accent/10 backdrop-blur-sm rounded-2xl border border-white/20 flex items-center justify-center animate-bounce-slow opacity-80" style="animation-delay: 1s;">
+                        <svg class="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-20">
+        <!-- Newsletter Section -->
+        <div class="bg-gradient-to-r from-primary to-primary-dark py-6 relative overflow-hidden">
+            <!-- Background decorative elements -->
+            <div class="absolute inset-0">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+                <div class="absolute bottom-0 left-0 w-40 h-40 bg-white/5 rounded-full blur-3xl"></div>
+            </div>
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="max-w-lg mx-auto text-center">
+                    <h3 class="text-white font-bold text-xl mb-2">Stay Updated</h3>
+                    <p class="text-white/80 text-sm mb-6">Get the latest updates on events and offers</p>
+                    <!-- Desktop Newsletter Form -->
+                    <form class="hidden md:flex bg-white/20 backdrop-blur-sm rounded-full overflow-hidden border border-white/30 hover:bg-white/25 transition-all duration-300">
+                        <input 
+                            type="email" 
+                            placeholder="Your email address" 
+                            class="flex-1 px-6 py-3 text-white placeholder-white/70 bg-transparent focus:outline-none"
+                        />
+                        <button 
+                            type="submit" 
+                            class="bg-white text-primary px-6 py-3 font-semibold hover:bg-white/90 transition-all duration-300 flex items-center space-x-2 group"
+                        >
+                            <span>Subscribe</span>
+                            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                            </svg>
+                        </button>
+                    </form>
+                    <!-- Mobile Newsletter Form -->
+                    <form class="md:hidden space-y-3">
+                        <input 
+                            type="email" 
+                            placeholder="Your email address" 
+                            class="w-full px-6 py-3 text-white placeholder-white/70 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 focus:outline-none focus:bg-white/25 transition-all duration-300"
+                        />
+                        <button 
+                            type="submit" 
+                            class="w-full bg-white text-primary px-6 py-3 font-semibold hover:bg-white/90 transition-all duration-300 flex items-center justify-center space-x-2 group rounded-full"
+                        >
+                            <span>Subscribe</span>
+                            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Footer Section -->
+        <div class="bg-gradient-to-br from-gray-900 via-gray-800 to-primary-dark text-white pt-16 pb-8 relative overflow-hidden">
+            <!-- Background decorative elements -->
+            <div class="absolute inset-0 pointer-events-none">
+                <div class="absolute top-10 left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-10 right-10 w-48 h-48 bg-secondary/10 rounded-full blur-3xl"></div>
+                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+            </div>
+            
+            <div class="container mx-auto px-6 relative z-10">
+                <!-- Logo and tagline -->
+                <div class="text-center mb-12" data-aos="fade-up" data-aos-duration="800">
+                    <div class="inline-flex items-center justify-center mb-6">
+                        <img src="/Images/logo.png" alt="FestGo Logo" class="w-auto h-16 bg-white rounded-lg shadow-elegant hover:shadow-glow transition-all duration-300 transform hover:scale-105 p-2">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">FestGo</h3>
+                    <p class="text-white/70 max-w-md mx-auto">Where every event begins with a click</p>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mb-12">
+                    <!-- Quick Links -->
+                    <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                        <h4 class="font-semibold text-lg mb-4 text-white">Quick Links</h4>
+                        <div class="space-y-3">
+                            <a href="index.html#home" class="block text-primary-light font-medium hover:text-white hover:translate-x-2 transition-all duration-300">Home</a>
+                            <a href="index.html#contact" class="block text-white/70 hover:text-white hover:translate-x-2 transition-all duration-300">Contact</a>
+                            <a href="about-us.html" class="block text-white/70 hover:text-white hover:translate-x-2 transition-all duration-300">About Us</a>
+                        </div>
+                    </div>
+
+                    <!-- Legal -->
+                    <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                        <h4 class="font-semibold text-lg mb-4 text-white">Legal</h4>
+                        <div class="space-y-3">
+                            <a href="user-agreement.html" class="block text-white/70 hover:text-white hover:translate-x-2 transition-all duration-300">User Agreement</a>
+                            <a href="terms-and-conditions.html" class="block text-white/70 hover:text-white hover:translate-x-2 transition-all duration-300">Terms & Conditions</a>
+                            <a href="privacy-policy.html" class="block text-white/70 hover:text-white hover:translate-x-2 transition-all duration-300">Privacy Policy</a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="300" class="col-span-2 md:col-span-1">
+                        <h4 class="font-semibold text-lg mb-4 text-white">Get in Touch</h4>
+                        <div class="space-y-3">
+                            <p class="text-white/70">Ramapuram & Bapatla</p>
+                            <p class="text-white/70">Coastal Destinations</p>
+                            <div class="flex space-x-4 mt-6">
+                                <!-- Social Media Icons -->
+                                <a href="#" class="group w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20 hover:bg-white/20 hover:scale-110 transition-all duration-300">
+                                    <svg class="w-5 h-5 text-white group-hover:text-primary-light transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 2.5h-2.5A4.5 4.5 0 0010 7v2H7v4h3v9h4v-9h3l1-4h-4V7a1 1 0 011-1h3V2.5z"/>
+                                    </svg>
+                                </a>
+                                <a href="#" class="group w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20 hover:bg-white/20 hover:scale-110 transition-all duration-300">
+                                    <svg class="w-5 h-5 text-white group-hover:text-primary-light transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <rect x="2" y="2" width="20" height="20" rx="5"/>
+                                        <circle cx="12" cy="12" r="5"/>
+                                        <circle cx="17.5" cy="6.5" r="1.5"/>
+                                    </svg>
+                                </a>
+                                <a href="#" class="group w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20 hover:bg-white/20 hover:scale-110 transition-all duration-300">
+                                    <svg class="w-5 h-5 text-white group-hover:text-primary-light transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <rect x="2" y="6" width="20" height="12" rx="4"/>
+                                        <path d="M10 9.5v5l5-2.5-5-2.5z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-white/10 pt-8 mt-8">
+                <div class="container mx-auto px-6">
+                    <div class="flex flex-col md:flex-row items-center justify-between text-center md:text-left space-y-2 md:space-y-0">
+                        <p class="text-white/60 text-sm">© 2025 FestGo Events Pvt Ltd. All rights reserved.</p>
+                        <p class="text-white/60 text-sm">
+                            Design & Developed by 
+                            <a href="https://omyratech.com" target="_blank" rel="noopener noreferrer" class="text-primary-light hover:text-white transition-colors duration-300 font-medium">
+                                Omyra Technologies Pvt Ltd.
+                            </a>
+                            <span class="text-red-400">❤️</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+  // Initialize AOS (Animate On Scroll)
+  AOS.init({
+    duration: 400,
+    easing: 'ease-out-cubic',
+    once: true,
+    offset: 50,
+    delay: 0
+  });
+
+  // Enhanced scroll behavior for navigation
+  document.addEventListener('DOMContentLoaded', function () {
+    const sections = ['home', 'services', 'contact'];
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    function onScroll() {
+      let scrollPos = window.scrollY + 120; // Offset for sticky header
+      let current = 'home';
+      for (let id of sections) {
+        const section = document.getElementById(id);
+        if (section && section.offsetTop <= scrollPos) {
+          current = id;
+        }
+      }
+      navLinks.forEach(link => {
+        if (link.dataset.section === current) {
+          link.classList.add('text-primary', 'font-semibold');
+          link.classList.remove('text-gray-700');
+        } else {
+          link.classList.remove('text-primary', 'font-semibold');
+          link.classList.add('text-gray-700');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', onScroll);
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.dataset.section;
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          window.scrollTo({
+            top: targetSection.offsetTop - 100,
+            behavior: 'smooth'
+          });
+        }
+        
+        navLinks.forEach(l => {
+          l.classList.remove('text-primary', 'font-semibold');
+          l.classList.add('text-gray-700');
+        });
+        this.classList.add('text-primary', 'font-semibold');
+        this.classList.remove('text-gray-700');
+      });
+    });
+
+    onScroll();
+
+    // Enhanced hover effects for glass morphism cards
+    const glassCards = document.querySelectorAll('[class*="backdrop-blur"]');
+    glassCards.forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-8px) scale(1.02)';
+        this.style.filter = 'brightness(1.05)';
+      });
+      card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+        this.style.filter = 'brightness(1)';
+      });
+    });
+
+    // Add floating animation to decorative elements
+    const floatingElements = document.querySelectorAll('.animate-float');
+    floatingElements.forEach((element, index) => {
+      element.style.animationDelay = `${index * 0.5}s`;
+    });
+
+    // Micro-interactions for buttons
+    const buttons = document.querySelectorAll('button, .bg-gradient-to-r');
+    buttons.forEach(button => {
+      button.addEventListener('mousedown', function() {
+        this.style.transform = 'scale(0.95)';
+      });
+      button.addEventListener('mouseup', function() {
+        this.style.transform = '';
+      });
+      button.addEventListener('mouseleave', function() {
+        this.style.transform = '';
+      });
+    });
+
+    // Add particle effect on scroll
+    let ticking = false;
+    function updateParticles() {
+      const scrolled = window.pageYOffset;
+      const parallaxElements = document.querySelectorAll('[data-parallax]');
+      
+      parallaxElements.forEach(element => {
+        const speed = element.dataset.parallax || 0.5;
+        element.style.transform = `translateY(${scrolled * speed}px)`;
+      });
+      
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        requestAnimationFrame(updateParticles);
+        ticking = true;
+      }
+    });
+
+    // Add ripple effect to clickable elements
+    function createRipple(event) {
+      const button = event.currentTarget;
+      const circle = document.createElement('span');
+      const diameter = Math.max(button.clientWidth, button.clientHeight);
+      const radius = diameter / 2;
+
+      circle.style.width = circle.style.height = `${diameter}px`;
+      circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
+      circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
+      circle.classList.add('ripple');
+
+      const ripple = button.getElementsByClassName('ripple')[0];
+      if (ripple) {
+        ripple.remove();
+      }
+
+      button.appendChild(circle);
+    }
+
+    // Add ripple styles
+    const style = document.createElement('style');
+    style.textContent = `
+      .ripple {
+        position: absolute;
+        border-radius: 50%;
+        transform: scale(0);
+        animation: ripple 600ms linear;
+        background-color: rgba(255, 255, 255, 0.6);
+        pointer-events: none;
+      }
+      @keyframes ripple {
+        to {
+          transform: scale(4);
+          opacity: 0;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+
+    // Apply ripple effect to buttons
+    document.querySelectorAll('button, a[class*="bg-gradient"]').forEach(button => {
+      button.addEventListener('click', createRipple);
+      button.style.position = 'relative';
+      button.style.overflow = 'hidden';
+    });
+
+    // Hero title will display as plain text without typing effect
+
+    // Add intersection observer for enhanced animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.group').forEach(el => {
+      observer.observe(el);
+    });
+  });
+</script>
+
+<style>
+/* Enhanced ripple effect */
+.ripple {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: ripple-animation 0.6s linear;
+  transform: scale(0);
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+</style>
+</body>
+</html>
