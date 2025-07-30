@@ -4,9 +4,7 @@
     "target": {
       "namespace": "android_app",
       "package_name": "com.festgo.app",
-      "sha256_cert_fingerprints": [
-        "AA:BB:CC:DD:EE:FF:00:11:22:33:44:55:66:77:88:99:AA:BB:CC:DD:EE:FF:00:11:22:33:44:55:66:77:88:99"
-      ]
+      "SHA256": "38:2A:5A:28:62:C2:9D:E4:B1:87:F5:15:ED:16:13:00:CA:FA:91:D5:83:60:B7:3B:41:0B:D4:FB:12:51:0B:C6"
     }
   }
 ]
